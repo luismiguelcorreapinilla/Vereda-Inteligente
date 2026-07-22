@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+
+title: "Vereda Inteligente"
+
+message: >
+  If you use this software in academic research, technical reports,
+  or territorial management projects, please cite it using the metadata below.
+
+type: software
+
+authors:
+  - family-names: "Correa Pinilla"
+    given-names: "Luis Miguel"
+    affiliation: "GeoSpatial Intelligence Lab"
+    orcid: ""
+
+abstract: >
+  Vereda Inteligente is an operational rural territorial intelligence platform
+  designed to support community management, territorial planning, and
+  evidence-based decision-making through the centralized management of
+  territorial, social, agricultural, and infrastructure information.
+
+keywords:
+  - Rural Information Systems
+  - Territorial Intelligence
+  - Decision Support
+  - Community Management
+  - Information Systems
+  - Scientific Computing
+  - GeoSpatial Intelligence Lab
+  - Colombia
+
+license: MIT
+
+repository-code: "https://github.com/Bochika/vereda-inteligente"
+
+url: "https://github.com/Bochika/vereda-inteligente"
+
+version: "1.0.0"
+
+date-released: "2026-07-22"
+
+language: en
