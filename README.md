@@ -1,9 +1,9 @@
 
 <p align="center">
-  <img src="assets/banners/banner.png" width="100%">
+  <img src="assets/banners/GeoSpatial_Intelligence_Lab_banner.png" width="100%">
 </p>
 
-<h1 align="center">🏡 Vereda Inteligente</h1>
+<h1 align="center"> Vereda Inteligente</h1>
 
 <p align="center">
 <b>Operational Platform • GeoSpatial Intelligence Lab</b>
