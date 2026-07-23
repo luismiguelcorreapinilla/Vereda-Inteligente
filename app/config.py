@@ -1,13 +1,35 @@
-carpeta_base
+"""
+Configuration settings for Vereda Inteligente.
 
-ruta_geojson
+GeoSpatial Intelligence Lab
+"""
 
-ruta_html
+import os
+import sys
 
-ruta_logo
+# =====================================================
+# APPLICATION
+# =====================================================
 
 APP_NAME = "Vereda Inteligente"
-
+VERSION = "1.0.0"
 AUTHOR = "GeoSpatial Intelligence Lab"
 
-VERSION = "1.0.0"
+# =====================================================
+# BASE DIRECTORY
+# =====================================================
+
+if getattr(sys, "frozen", False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# =====================================================
+# FILE PATHS
+# =====================================================
+
+GEOJSON_FILE = os.path.join(BASE_DIR, "simijaca_completo.geojson")
+
+HTML_OUTPUT = os.path.join(BASE_DIR, "visor_censo.html")
+
+LOGO_FILE = os.path.join(BASE_DIR, "logo.png").replace("\\", "/")
