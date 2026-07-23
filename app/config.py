@@ -28,8 +28,17 @@ else:
 # FILE PATHS
 # =====================================================
 
-GEOJSON_FILE = os.path.join(BASE_DIR, "simijaca_completo.geojson")
+GEOJSON_FILE = os.path.join(
+    BASE_DIR,
+    "simijaca_completo.geojson"
+)
 
-HTML_OUTPUT = os.path.join(BASE_DIR, "visor_censo.html")
+HTML_OUTPUT = os.path.join(
+    BASE_DIR,
+    "visor_censo.html"
+)
 
-LOGO_FILE = os.path.join(BASE_DIR, "logo.png").replace("\\", "/")
+LOGO_PATH = os.path.join(
+    BASE_DIR,
+    "logo.png"
+).replace("\\", "/")
