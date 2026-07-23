@@ -1,32 +1,75 @@
 """
-Vereda Inteligente
-
-Main application.
+Main application for Vereda Inteligente.
 
 GeoSpatial Intelligence Lab
 """
 
 import webbrowser
 
-from config import *
+from config import (
+    HTML_OUTPUT,
+    LOGO_PATH,
+)
+
 from data_loader import load_geojson
 
-from html.page_builder import build_html
+from html import build_html
 
 
 def main():
+    """
+    Main application workflow.
+    """
 
-    gdf, geojson = load_geojson(GEOJSON_FILE)
+    print("=" * 50)
+    print("VEREDA INTELIGENTE")
+    print("GeoSpatial Intelligence Lab")
+    print("=" * 50)
 
-    build_html(
-        geojson=geojson,
-        logo_path=LOGO_FILE,
-        output_file=HTML_OUTPUT,
+    # ----------------------------------
+    # Load GeoJSON
+    # ----------------------------------
+
+    print("Loading cadastral data...")
+
+    gdf, geojson_data = load_geojson()
+
+    print(f"Parcels loaded: {len(gdf)}")
+
+    # ----------------------------------
+    # Build HTML
+    # ----------------------------------
+
+    print("Building HTML viewer...")
+
+    html = build_html(
+        geojson_data=geojson_data,
+        logo_path=LOGO_PATH
     )
 
-    print("Interactive census generated.")
+    # ----------------------------------
+    # Save HTML
+    # ----------------------------------
 
-    webbrowser.open("file://" + HTML_OUTPUT)
+    with open(
+        HTML_OUTPUT,
+        "w",
+        encoding="utf-8"
+    ) as file:
+
+        file.write(html)
+
+    print("Viewer generated successfully.")
+
+    # ----------------------------------
+    # Open Browser
+    # ----------------------------------
+
+    webbrowser.open(
+        "file://" + HTML_OUTPUT
+    )
+
+    print("Viewer opened.")
 
 
 if __name__ == "__main__":
