@@ -7,19 +7,19 @@ GeoSpatial Intelligence Lab
 import geopandas as gpd
 
 
-def load_geojson(path):
+def load_geojson(path: str):
     """
     Load a cadastral GeoJSON file.
 
     Parameters
     ----------
     path : str
+        Path to the GeoJSON file.
 
     Returns
     -------
-    GeoDataFrame
-    str
-        GeoJSON serialized as string.
+    tuple
+        (GeoDataFrame, GeoJSON string)
     """
 
     print("Loading cadastral GeoJSON...")
@@ -28,6 +28,6 @@ def load_geojson(path):
 
     print(f"Properties loaded: {len(gdf)}")
 
-    geojson = gdf.to_json()
+    geojson_data = gdf.to_json()
 
-    return gdf, geojson
+    return gdf, geojson_data
