@@ -7,6 +7,9 @@ GeoSpatial Intelligence Lab
 import webbrowser
 
 from config import (
+    APP_NAME,
+    VERSION,
+    GEOJSON_FILE,
     HTML_OUTPUT,
     LOGO_PATH,
 )
@@ -21,24 +24,21 @@ def main():
     Main application workflow.
     """
 
-    print("=" * 50)
-    print("VEREDA INTELIGENTE")
+    print("=" * 60)
+    print(APP_NAME)
+    print(f"Version {VERSION}")
     print("GeoSpatial Intelligence Lab")
-    print("=" * 50)
+    print("=" * 60)
 
-    # ----------------------------------
-    # Load GeoJSON
-    # ----------------------------------
+    # =====================================================
+    # LOAD GEOJSON
+    # =====================================================
 
-    print("Loading cadastral data...")
+    gdf, geojson_data = load_geojson(GEOJSON_FILE)
 
-    gdf, geojson_data = load_geojson()
-
-    print(f"Parcels loaded: {len(gdf)}")
-
-    # ----------------------------------
-    # Build HTML
-    # ----------------------------------
+    # =====================================================
+    # BUILD HTML
+    # =====================================================
 
     print("Building HTML viewer...")
 
@@ -47,9 +47,9 @@ def main():
         logo_path=LOGO_PATH
     )
 
-    # ----------------------------------
-    # Save HTML
-    # ----------------------------------
+    # =====================================================
+    # SAVE HTML
+    # =====================================================
 
     with open(
         HTML_OUTPUT,
@@ -59,17 +59,19 @@ def main():
 
         file.write(html)
 
-    print("Viewer generated successfully.")
+    print("HTML viewer generated successfully.")
 
-    # ----------------------------------
-    # Open Browser
-    # ----------------------------------
+    # =====================================================
+    # OPEN BROWSER
+    # =====================================================
+
+    print("Opening browser...")
 
     webbrowser.open(
         "file://" + HTML_OUTPUT
     )
 
-    print("Viewer opened.")
+    print("Application finished successfully.")
 
 
 if __name__ == "__main__":
